@@ -15,7 +15,8 @@ def home_page():
 
 @app.route('/<name>')
 def profile(name):
-	return render_template('index.html', name=name)
+	new_name = name + " likes to eat mangos"
+	return render_template('index.html', name=new_name)
 
 
 @app.route('/add_numbers', methods=['GET','POST'])
@@ -84,11 +85,15 @@ def python_apps_page():
 	# testing stuff
 	return render_template('python_apps.html')
 
+@app.route('/contact')
+def contact():
+	return render_template('contact_me.html')
 
 @app.route('/blog', methods=['GET'])
 def blog_page():
   return render_template('blog.html')
 
+app.run(host=os.getenv('IP', '0.0.0.0'), port = int(os.getenv('PORT', 8080)))
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
