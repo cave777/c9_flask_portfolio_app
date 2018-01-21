@@ -90,7 +90,7 @@ def contact():
 	return render_template('contact_me.html')
 
 @app.route('/certificates')
-def contact():
+def certificates():
 	return render_template('certificates.html')
 
 @app.route('/blog', methods=['GET'])
