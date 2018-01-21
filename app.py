@@ -89,6 +89,10 @@ def python_apps_page():
 def contact():
 	return render_template('contact_me.html')
 
+@app.route('/certificates')
+def contact():
+	return render_template('certificates.html')
+
 @app.route('/blog', methods=['GET'])
 def blog_page():
   return render_template('blog.html')
